@@ -25,7 +25,7 @@ def rm_exited_addrs():
     Adapted from @FiloSottile's original command.
     """
     try:
-        pcs = subprocess.Popen("sudo docker ps -a | egrep -i \"exit|created\" \
+        pcs = subprocess.Popen("docker ps -a | egrep -i \"exit|created\" \
                                | cut -d ' ' -f 1 | xargs sudo docker rm", \
                                stdout=PIPE)
         print(pcs.communicate())
@@ -42,4 +42,5 @@ if __name__ == '__main__':
                         help='Culls unnecessary containers.')
     parser.add_argument(description='CLI-based Docker helper', \
                         help='Created by james-daniel.')
-    args = parser.parse_args()
+    for arg in vars(parser):
+        print(arg)
