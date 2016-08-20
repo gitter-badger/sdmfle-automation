@@ -5,3 +5,4 @@ python:
 branches:
   only:
     - master
+sudo: required
