@@ -1,4 +1,4 @@
-# sdmfle-conf
+# sdmfle-automation
 
 [![Build Status](https://travis-ci.org/securitydaemons/sdmfle-automation.svg?branch=master)](https://travis-ci.org/securitydaemons/sdmfle-automation)
 
