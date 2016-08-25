@@ -1,6 +1,7 @@
 # sdmfle-automation
 
 [![Build Status](https://travis-ci.org/securitydaemons/sdmfle-automation.svg?branch=master)](https://travis-ci.org/securitydaemons/sdmfle-automation)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/securitydaemons/sdmfle-automation.svg)](http://isitmaintained.com/project/securitydaemons/sdmfle-automation "Average time to resolve an issue")
 
 This repository contains infrastructure automation tooling developed for the Security Daemons Multi-Faceted Laboratory Environment.
 
