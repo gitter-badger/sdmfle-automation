@@ -1,5 +1,6 @@
 """
 Docker Helper
+Author: James Daniel
 Purpose: Centralized Docker program to assist with automating common tasks.
 """
 

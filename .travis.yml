@@ -11,4 +11,4 @@ install:
   - "pip install pylint"
 script:
   - nosetests
-  - pylint docker_helper.py
+  - pylint ./docker_helper.py
