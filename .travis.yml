@@ -1,11 +1,14 @@
-language: python
+language:
+  - python
 python:
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
+  - "2.7"
 branches:
   only:
     - master
-sudo: required
-script: nosetests
+sudo:
+  - required
+install:
+  - "pip install pylint"
+script:
+  - nosetests
+  - pylint
