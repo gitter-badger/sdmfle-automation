@@ -10,6 +10,6 @@ sudo:
 install:
   - "pip install pylint"
 before_script:
-  - pylint
+  - pylint ./docker/docker_helper.py
 script:
   - nosetests
