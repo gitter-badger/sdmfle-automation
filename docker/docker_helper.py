@@ -8,7 +8,7 @@ import subprocess
 import sys
 import argparse
 
-def get_container_ip_addrs() -> 'None':
+def get_container_ip_addrs():
     """
     Retrieves the IP addresses associated with each container.
     Prints to stdout when complete.
@@ -19,7 +19,7 @@ def get_container_ip_addrs() -> 'None':
     except subprocess.CalledProcessError:
         sys.exit(1)
 
-def rm_exited_addrs() -> 'None':
+def rm_exited_addrs():
     """
     Culls unnecessary Docker containers. Prints to stdout when complete.
     Adapted from @FiloSottile's original command.
