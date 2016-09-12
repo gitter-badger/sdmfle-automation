@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# Boilerplate for creating a simple bash script with some basic strictness
-# checks and help features.
+
+# rocket.sh - Deploy cloud-config and network-config YAML files to all nodes.
+# Copyright (c) 2016 James Daniel
+
 # Bash Boilerplate: https://github.com/alphabetum/bash-boilerplate
 # Copyright (c) 2015 William Melody • hi@williammelody.com
 
@@ -137,20 +139,17 @@ IFS="${SAFER_IFS}"
 # Environment
 ###############################################################################
 
-# $_ME
-#
-# Set to the program's basename.
 _ME=$(basename "${0}")
+_NODE_IPS=('10.5.5.12', '10.5.5.13', '10.5.5.14', '10.5.5.15')
+_CLOUD_PATH='/home/jdaniel/git-securitydaemons/sdmfle-conf/coreos/cloud-config/'
+_NETWORK_PATH='/home/jdaniel/git-securitydaemons/sdmfle-conf/coreos/network-config/'
+_RSA_PUB_ID='/home/jdaniel/.ssh/id_rsa.pub'
 
 ###############################################################################
 # Help
 ###############################################################################
 
 # _print_help()
-#
-# Usage:
-#   _print_help
-#
 # Print the program help information.
 _print_help() {
   cat <<HEREDOC
@@ -172,22 +171,20 @@ HEREDOC
 ###############################################################################
 # Program Functions
 ###############################################################################
-NODE_IPS = [10.5.5.12, 10.5.5.13, 10.5.5.14, 10.5.5.15]
-CLOUD_PATH = /home/jdaniel/git-securitydaemons/sdmfle-conf/coreos/cloud-config/
-NETWORK_PATH = /home/jdaniel/git-securitydaemons/sdmfle-conf/coreos/network-config/
-RSA_PUB_ID = /home/jdaniel/.ssh/id_rsa.pub
 
+# _cloud_config()
+# Usage:
 _cloud_config() {
-  for ip in $NODE_IPS; do
-    for cloudconfig in $CLOUD_PATH; do
+  for ip in _NODE_IPS; do
+    for cloudconfig in _CLOUD_PATH; do
       scp -i $RSA_PUB_ID cloudconfig core@ip:~/
     done
   done
 }
 
 _network_config() {
-  for ip in $NODE_IPS; do
-    for network-config in NETWORK_PATH; do
+  for ip in _NODE_IPS; do
+    for network-config in _NETWORK_PATH; do
       scp -i $RSA_PUB_ID cloudconfig core@ip:~/
     done
   done
@@ -210,10 +207,10 @@ _main() {
     _print_help
   elif [[ "${1:-}" =~ ^-c|--cloud-config$ ]]
   then
-    _cloud_config()
-  elif [[ "${1:-}" =~ ^-c|--cloud-config$ ]]
+    _cloud_config
+  elif [[ "${1:-}" =~ ^-n|--network-config$ ]]
   then
-    _cloud_config()
+    _network_config
   fi
 }
 
