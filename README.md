@@ -1,5 +1,7 @@
 # sdmfle-automation
 
+[![Join the chat at https://gitter.im/securitydaemons/sdmfle-automation](https://badges.gitter.im/securitydaemons/sdmfle-automation.svg)](https://gitter.im/securitydaemons/sdmfle-automation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/securitydaemons/sdmfle-automation.svg?branch=master)](https://travis-ci.org/securitydaemons/sdmfle-automation)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/securitydaemons/sdmfle-automation.svg)](http://isitmaintained.com/project/securitydaemons/sdmfle-automation "Average time to resolve an issue")
 
